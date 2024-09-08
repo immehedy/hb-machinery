@@ -10,11 +10,14 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "source.unsplash.com",
+        hostname: "cdn.sanity.io",
         port: "",
         pathname: "/**",
       },
     ],
+  },
+  experimental: {
+    serverComponents: true,
   },
 };
 
