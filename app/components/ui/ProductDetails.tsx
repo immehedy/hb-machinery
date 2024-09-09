@@ -1,5 +1,6 @@
 "use client";
 import { urlFor } from "@/sanity/lib/image";
+import { PortableText } from "next-sanity";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -7,7 +8,7 @@ interface ProductDetailsProps {
   images: string[];
   title: string;
   slug: string;
-  description?: string;
+  description?: any;
   price: number;
 }
 
@@ -59,7 +60,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
         <div className="w-full lg:w-1/2 lg:pl-8">
           <h1 className="text-3xl font-bold mb-2">{title}</h1>
           <p className="text-sm text-gray-500 mb-4">Slug: {slug}</p>
-          {description && <p className="text-gray-700 mb-4">{description}</p>}
+          {description && <div className="prose prose-blue lg:prose-lg md:prose-md sm:prose-sm mb-4"><PortableText value={description} /></div>}
           <p className="text-xl font-semibold text-indigo-600">
             ${price.toFixed(2)}
           </p>

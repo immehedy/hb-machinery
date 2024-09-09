@@ -6,7 +6,7 @@ interface Product {
   _id: string;
   slug: { current: string };
   name: string;
-  description: string;
+  description: any;
   price: number;
   images: any[];
 }
@@ -27,7 +27,7 @@ async function getProduct(slug: string): Promise<Product | undefined> {
   images
   } [0]`
 
-  return await client.fetch(query, {}, { next: { revalidate: 3600 } });
+  return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }
 
 // The main page component
