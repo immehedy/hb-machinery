@@ -1,4 +1,3 @@
-import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import ProductDetails from "@/app/components/ui/ProductDetails";
 
@@ -19,16 +18,16 @@ interface PageProps {
 // This function fetches the product data
 async function getProduct(slug: string): Promise<Product | undefined> {
 
-  //@ts-ignore
-  return await client.fetch(groq`*[_type=="product" && slug.current=='${slug}'][0]{
-    _id,
-    slug,
-    name,
-    description,
-    price,
-    images
-  }`
-  );
+  const query = `*[_type=="product" && slug.current=='${slug}'] {
+  _id,
+  slug,
+  name,
+  description,
+  price,
+  images
+  } [0]`
+
+  return await client.fetch(query, {}, { next: { revalidate: 3600 } });
 }
 
 // The main page component

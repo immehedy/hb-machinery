@@ -1,5 +1,4 @@
 import React from "react";
-import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
@@ -9,13 +8,21 @@ import ImageCard from "./ImageCard";
 interface Product {
   _id: string;
   name: string;
-  slug: { current: string };
+  slug: string;
   images: any[]; // You might want to define a more specific type for images
 }
 
+
 async function getProducts(): Promise<Product[]> {
-  //@ts-ignore
-  return await client.fetch(groq`*[_type=="product"]{_id, name, slug, images}`);
+  const query = `*[_type== "product"] | order(_createdAt desc) {
+  _id,
+  name,
+    images,
+    "slug" : slug.current,
+    price,
+    description
+}`
+return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }
 
 export default async function Products() {
@@ -24,10 +31,10 @@ export default async function Products() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {products.map((product: Product) => (
-        <Link key={product._id} href={`/product/${product.slug.current}`}>
+        <Link key={product._id} href={`/product/${product.slug}`}>
           <ImageCard
-            imageSrc={urlFor(product.images && product.images[0]).url()}
-            slug={product.slug?.current}
+            imageSrc={urlFor(product.images?.[0]).url()}
+            slug={product.slug}
             title={product.name}
           />
         </Link>
