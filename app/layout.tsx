@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   title: "HB Machinery BD",
   description:
     "Find high-quality printing machine spare parts for optimal performance and longevity. Explore our wide range of durable components for offset, digital, and large-format printers. Reliable parts and expert support available.",
+    icons: {
+      icon: {
+        url: '/hb-machinery.png',
+        href: '/hb-machinery.png',
+      },
+    },
 };
 
 export default function RootLayout({

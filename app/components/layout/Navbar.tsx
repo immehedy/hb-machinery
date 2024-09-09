@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <div className="flex-shrink-0 mb-0">
           <Image
-            src="https://seemaenterprisebd.com/wp-content/uploads/2022/06/cropped-Seema-Ent-Final-logo-1.png"
+            src="/hb-machinery-logo.png"
             alt="Logo"
             width={150}
             height={40}
@@ -21,16 +21,16 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-6">
           <div className="flex items-center">
             <Phone className="h-3 md:h-5 w-3 md:w-5 mr-2 text-gray-400" />
-            <span className="text-xs md:text-base">+1 123-456-7890</span>
-          </div>
-          <div className="flex items-center">
-            <Mail className="h-3 md:h-5 w-3 md:w-5 mr-2 text-gray-400" />
-            <span className="text-xs md:text-base">info@example.com</span>
+            <span className="text-xs md:text-base">01711-871147</span>
           </div>
           {/* <div className="flex items-center">
-            <MapPin className="h-5 w-5 mr-2 text-gray-400" />
-            <span>123 Main St, City, Country</span>
+            <Mail className="h-3 md:h-5 w-3 md:w-5 mr-2 text-gray-400" />
+            <span className="text-xs md:text-base">info@hbmachinerybd.com</span>
           </div> */}
+          <div className="flex items-center">
+            <MapPin className="h-5 w-5 mr-2 text-gray-400" />
+            <span>23/3, Distilary Road, Gandaria. Dhaka-1204</span>
+          </div>
         </div>
       </div>
     </nav>
