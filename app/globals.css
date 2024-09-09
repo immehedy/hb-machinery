@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-100;
+  }
+}
+
+/* Basic masonry-like grid */
+.masonry-grid {
+  @apply columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4;
+}
+
+.masonry-grid > * {
+  @apply break-inside-avoid mb-6;
+}

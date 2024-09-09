@@ -29,7 +29,7 @@ export default async function Products() {
   const products = await getProducts();
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="masonry-grid">
       {products.map((product: Product) => (
         <Link key={product._id} href={`/product/${product.slug}`}>
           <ImageCard

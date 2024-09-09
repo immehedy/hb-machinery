@@ -34,7 +34,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
               alt={images[index]}
               width={350}
               height={350}
-              className="object-cover mx-auto w-full h-[550px] rounded-lg shadow-md"
+              className="object-contain mx-auto w-full h-[550px] rounded-lg shadow-md"
             />
           </div>
           {/* Thumbnail Images */}
