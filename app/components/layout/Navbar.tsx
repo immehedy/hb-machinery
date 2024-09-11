@@ -21,15 +21,15 @@ const Navbar: React.FC = () => {
         {/* Contact Information */}
         <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-6">
           <div className="flex items-center">
-            <Phone className="h-3 md:h-5 w-3 md:w-5 mr-2 text-gray-400" />
+            <Phone className="h-3 md:h-5 w-3 md:w-5 mr-2 text-primary" />
             <span className="text-xs md:text-base">01711-871147</span>
           </div>
           <div className="flex items-center">
-            <Mail className="h-3 md:h-5 w-3 md:w-5 mr-2 text-gray-400" />
+            <Mail className="h-3 md:h-5 w-3 md:w-5 mr-2 text-primary" />
             <span className="text-xs md:text-base">info@hbmachinerybd.com</span>
           </div>
           {/* <div className="flex items-center">
-            <MapPin className="h-5 w-5 mr-2 text-gray-400" />
+            <MapPin className="h-5 w-5 mr-2 text-primary" />
             <span>23/3, Distilary Road, Gandaria. Dhaka-1204</span>
           </div> */}
         </div>

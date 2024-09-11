@@ -9,6 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        primary: {
+          DEFAULT: '#008080', // Teal color
+          // You can add more shades if needed
+          light: '#e6ffff',
+          dark: '#006666',
+        },
       },
     },
   },

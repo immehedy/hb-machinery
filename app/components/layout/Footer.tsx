@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             className="w-48 h-auto mb-2"
           />
           <div className="flex items-start">
-              <MapPin size={20} className="mr-2 text-gray-600 flex-shrink-0 mt-1" />
+              <MapPin size={20} className="mr-2 text-primary flex-shrink-0 mt-1" />
               <span className="text-sm">
                 23/3, Distilary Road, Gandaria.
                 <br />
@@ -27,11 +27,11 @@ const Footer: React.FC = () => {
               href="mailto:info@hbmachinerybd.com"
               className="flex items-center text-sm hover:underline"
             >
-              <Mail size={20} className="mr-2 text-gray-600 flex-shrink-0" />
+              <Mail size={20} className="mr-2 text-primary flex-shrink-0" />
               info@hbmachinerybd.com
             </a>
             <div className="flex items-center text-sm">
-              <Phone size={20} className="mr-2 text-gray-600 flex-shrink-0" />
+              <Phone size={20} className="mr-2 text-primary flex-shrink-0" />
               <span>01711-871147</span>
             </div>
             <a
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="flex items-center text-sm hover:underline"
             >
-              <Facebook size={20} className="mr-2 text-gray-600 flex-shrink-0" />
+              <Facebook size={20} className="mr-2 text-primary flex-shrink-0" />
               <span>Follow us on HB Machinery BD</span>
             </a>
           </div>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
         
       </div>
       <div className="text-center mt-2 text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} HB Machinery BD. All rights reserved.
+          &copy; {new Date().getFullYear()} <span className='text-primary'>HB Machinery BD.</span> All rights reserved.
         </div>
     </footer>
   );
